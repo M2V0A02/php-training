@@ -11,23 +11,36 @@
 
 class User {
     // Установление значений по умолчанию
-    public $name = "Egor";
-    public $password = "qwerty";
-    public $email = "123@tand.ru";
-    public $city = "Город";
+    public $name;
+    public $password;
+    public $email;
+    public $city;
+
+
+    function __construct($name, $password, $email, $city)
+    {
+        $this->name = $name;
+        $this->password = $password;
+        $this->email = $email;
+        $this->city = $city;
+    }
+
+    function __destruct()
+    {
+        print "Уничтожение";
+    }
 
     public function hello() {
         return 'Hello' . $this->name;
     }
 
     function getInfo() {
-        return "{$this->name} {$this->surname}"; 
+        return "{$this->name} {$this->email}"; 
     }
 }
 
-$admin = new User();
-$admin->surname = "Volod";
-echo "Имя и фамилия: {$admin->getInfo()}";
+$admin = new User('Alex', '12345', '123@mail.ru', 'kiev');
+echo "{$admin->getInfo()}";
 // $admin->Hello();
 // echo $admin->name;
 
