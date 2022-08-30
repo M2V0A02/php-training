@@ -8,6 +8,8 @@
 </head>
 <body>
 <?php
+require_once "home.php";
+use Home\User1 as User1;
 class User {
     public $id = 5;
     public $d = "d";
@@ -29,8 +31,9 @@ class User {
         $this->data[$name] = $value;
     }
 }
-$obj = new User();
-$obj->a;
+$obj = new User1();
+$obj->a = "3";
+echo $obj->a;
 ?>
 </body>
 </html>
