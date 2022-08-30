@@ -31,6 +31,7 @@ User::setName('Ivan');
 echo User::getName();
 
 class Moderator extends User {
+    const SOME_CONST = 314;
     function __construct($id)
     {
         // вызвать конструктор родителя
@@ -44,13 +45,14 @@ class Moderator extends User {
         $st .= "{$this->id}";
         return $st;
     }
-
-    function hello() {
+    // нельзя наследовать
+    final function hello() {
         echo "Moderator is here";
     }
 }
 Moderator::setName('Vlad1');
 $mod = new Moderator("1234");
+echo Moderator::SOME_CONST;
 echo $mod->info();
 ?>
 </body>
