@@ -8,37 +8,29 @@
 </head>
 <body>
 <?php
-trait Base {
-    public function hello(){
-        echo "Hello";
+class User {
+    public $id = 5;
+    public $d = "d";
+    function __clone()
+    {
+        $this->id = 0;
     }
 
-    public function hello1(){
-        echo "Hello2";
+    // не работает с публичными полями
+    function __get($variable)
+    {
+        echo "You get {$variable} ";
+    }
+
+    //не работает с публичными полями
+    public function __set($name, $value)
+    {
+        print "Установка '$name' в '$value'\n";
+        $this->data[$name] = $value;
     }
 }
-
-trait Hello {
-    public function hello(){
-        echo "h3";
-    }
-    
-    public function hello1(){
-        echo "Hello4";
-    }
-}
-
-Class Er 
-{
-    use Base, Hello {
-        Base::hello insteadof Hello;
-        Hello::hello1 insteadof Base;
-    }
-}
-
-$er = new Er();
-$er->hello();
-$er->hello1();
+$obj = new User();
+$obj->a;
 ?>
 </body>
 </html>
