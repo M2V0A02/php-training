@@ -8,52 +8,37 @@
 </head>
 <body>
 <?php
-abstract class User {
-    public $name;
-    public $status;
-
-    abstract function __construct($name, $status);
-
-}
-abstract class User4 {
-    public function getStatus()
-    {
-        print $this->name . $this->status;
+trait Base {
+    public function hello(){
+        echo "Hello";
     }
-}
-class Moderator extends User{
-    function __construct($name, $status){
 
+    public function hello1(){
+        echo "Hello2";
     }
 }
 
-interface User1 {
-    // не может содержать свойства
-    const B = 'Константа интерфейса';
-    function __construct($name, $status);
-    function getStatus();
-}
-
-interface User2 {
-    // не может содержать свойства
-    function getStatus();
-}
-
-class Moderator1 implements User1, User2 {
-
-    function __construct($name, $status)
-    {
-        $this->name = $name;
-        $this->status = $status;
+trait Hello {
+    public function hello(){
+        echo "h3";
     }
-    function getStatus()
-    {
-        print $this->name . $this->status;
+    
+    public function hello1(){
+        echo "Hello4";
     }
 }
 
-$m = new Moderator1('egor', 'on');
-$m->getStatus();
+Class Er 
+{
+    use Base, Hello {
+        Base::hello insteadof Hello;
+        Hello::hello1 insteadof Base;
+    }
+}
+
+$er = new Er();
+$er->hello();
+$er->hello1();
 ?>
 </body>
 </html>
