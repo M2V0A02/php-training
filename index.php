@@ -1,16 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <?php
-    $a_bool = TRUE;
-    $a_str = "foo";
-    $a_str2 = "foo";
-    $an_int = 12;
-    
-    echo gettype($a_bool); // boolean
-    echo gettype($a_str); // string
-    if (is_int($an_int)) {
-        $an_int += 4;
-    }
+Class ShoppingCard {
 
-    if (is_string($a_bool)) {
-        echo "Строка: $a_bool";
-    }
+};
+
+$product1 = new ShoppingCard();
+$product2 = new ShoppingCard();
+$product3 = new ShoppingCard();
+
+var_dump($product1);
+var_dump($product2);
+var_dump($product1 instanceof ShoppingCard);
+var_dump($product2 instanceof Attribute);
 ?>
+</body>
+</html>
