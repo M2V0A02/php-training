@@ -8,52 +8,28 @@
 </head>
 <body>
 <?php
+abstract class User {
+    public $name;
+    public $status;
 
-class User {
-    private static $name;
-    function __construct($surname, $password)
+    function __construct($name, $status)
     {
-        $this->surname = $surname;
-        $this->password = $password;
+        $this->name = $name;
+        $this->status = $status;
     }
 
-    function info(){
-        return "{$this->surname} {$this->password}";
-    }
-    public static function setName($name1) {
-        self::$name = $name1;
-    }
-    public static function getName() {
-        return self::$name;
+    public function getStatus()
+    {
+        print $this->name . $this->status;
     }
 }
-User::setName('Ivan');
-echo User::getName();
 
-class Moderator extends User {
-    const SOME_CONST = 314;
-    function __construct($id)
-    {
-        // вызвать конструктор родителя
-        parent::__construct('volod', 'qwerty');
-        $this->id = $id;
-    }
+class Moderator extends User{
 
-    function info()
-    {
-        $st = parent::info();
-        $st .= "{$this->id}";
-        return $st;
-    }
-    // нельзя наследовать
-    final function hello() {
-        echo "Moderator is here";
-    }
 }
-Moderator::setName('Vlad1');
-$mod = new Moderator("1234");
-echo Moderator::SOME_CONST;
-echo $mod->info();
+
+$m = new Moderator('egor', 'on');
+$m->getStatus();
 ?>
 </body>
 </html>
