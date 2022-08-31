@@ -8,15 +8,12 @@
 </head>
 <body>
 <?php
-    $result = 0;
-    while ($result != 14)
-    {
-        $a = rand(0, 10);
-        $b = rand(0, 10);
-        $c = rand(0, 10);
-        $result = $a + $b + $c;            
-    }
-    echo $result;
+    $arr = array(1,2,3,4,10,100,3,4987,6,7,8,9);
+    echo max($arr);
+    $max = $arr[0];
+    foreach($arr as $item)
+        if ($max < $item) $max = $item;
+    echo $max;
 ?>
 </body>
 </html>
