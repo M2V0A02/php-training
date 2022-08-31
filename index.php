@@ -8,32 +8,10 @@
 </head>
 <body>
 <?php
-require_once "home.php";
-use Home\User1 as User1;
-class User {
-    public $id = 5;
-    public $d = "d";
-    function __clone()
-    {
-        $this->id = 0;
-    }
-
-    // не работает с публичными полями
-    function __get($variable)
-    {
-        echo "You get {$variable} ";
-    }
-
-    //не работает с публичными полями
-    public function __set($name, $value)
-    {
-        print "Установка '$name' в '$value'\n";
-        $this->data[$name] = $value;
-    }
-}
-$obj = new User1();
-$obj->a = "3";
-echo $obj->a;
+    // header("Location: http://qwerrty.ru"); Перенаправление
+    echo '<script type="text/javascript">window.location.href="http://qwerrty.ru"</script>';
+    // echo 'window.location.href="http://qwerrty.ru"';
+    // echo '</script>';
 ?>
 </body>
 </html>
