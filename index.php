@@ -8,12 +8,15 @@
 </head>
 <body>
 <?php
-    $arr = array(3,8,15,25,16,11,10,5,7,30);
-    for ($i = 0; $i <= count($arr) - 1; $i++)
+    $result = 0;
+    while ($result != 14)
     {
-        if ($arr[$i] % 5 == 0) 
-            echo $arr[$i] . "</br>";
+        $a = rand(0, 10);
+        $b = rand(0, 10);
+        $c = rand(0, 10);
+        $result = $a + $b + $c;            
     }
+    echo $result;
 ?>
 </body>
 </html>
