@@ -14,6 +14,11 @@
     $reversed = array();
     for ($i = 0; $i < count($my_array); $i++) array_unshift($reversed, $my_array[$i]);
     print_r($reversed);
+    $str = "Turn Str";
+    print($str);
+    $str1 = '';
+    for($i = strlen($str) - 1; $i >= 0; $i--) $str1 .= $str[$i];
+    print($str1);
 ?>
 </body>
 </html>
