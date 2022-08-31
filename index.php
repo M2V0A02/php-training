@@ -8,20 +8,12 @@
 </head>
 <body>
 <?php
-    class User{
-        static private $blood = 5;
-        static public function insertBlood($litr)
-        {
-            self::$blood += $litr;
-        }
-        static public function showBlood()
-        {
-            echo self::$blood;
-        }
-    }
-    User::showBlood();
-    User::insertBlood(3);
-    User::showBlood();
+    $my_array = ['h', 'e', 'l', 'l', 'o'];
+    $my_array = array_reverse($my_array);
+    print_r($my_array);
+    $reversed = array();
+    for ($i = 0; $i < count($my_array); $i++) array_unshift($reversed, $my_array[$i]);
+    print_r($reversed);
 ?>
 </body>
 </html>
