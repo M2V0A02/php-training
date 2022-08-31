@@ -8,10 +8,10 @@
 </head>
 <body>
 <?php
-    // header("Location: http://qwerrty.ru"); Перенаправление
-    echo '<script type="text/javascript">window.location.href="http://qwerrty.ru"</script>';
-    // echo 'window.location.href="http://qwerrty.ru"';
-    // echo '</script>';
+    $capitals = array("US" => "Washington", "UK" => "London", "Austria" => "Vienna");
+    asort($capitals); // сортировка по значению
+    ksort($capitals); // сортировка по ключу 
+    sort($capitals); // сортировка по значению с удалением ключей.
 ?>
 </body>
 </html>
