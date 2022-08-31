@@ -7,17 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+<form action="action.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload">
+    <input type="submit" value="Загрузить">
+</form>
 <?php
-    function fac($x)
-    {
-        if ($x === 0){
-            return 1;
-        }
-        else {
-            return $x * fac($x - 1);
-        }
+    $num = '2';
+    switch($num) {
+        case "2":
+            echo "two!";
+        case "3":
+            echo "three!";
+        default:
+            echo "shnu!";
+            break;
     }
-    echo fac(5);
+
+
 ?>
 </body>
 </html>
