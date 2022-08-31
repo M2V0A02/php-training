@@ -8,10 +8,9 @@
 </head>
 <body>
 <?php
-    $capitals = array("US" => "Washington", "UK" => "London", "Austria" => "Vienna");
-    asort($capitals); // сортировка по значению
-    ksort($capitals); // сортировка по ключу 
-    sort($capitals); // сортировка по значению с удалением ключей.
+    $variable = "value";
+    $value = "123";
+    echo $$variable; // 123
 ?>
 </body>
 </html>
