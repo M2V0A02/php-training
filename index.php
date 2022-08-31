@@ -7,23 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-<form action="action.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="upload">
-    <input type="submit" value="Загрузить">
-</form>
 <?php
-    $num = '2';
-    switch($num) {
-        case "2":
-            echo "two!";
-        case "3":
-            echo "three!";
-        default:
-            echo "shnu!";
-            break;
+    $arr = array(3,8,15,25,16,11,10,5,7,30);
+    for ($i = 0; $i <= count($arr) - 1; $i++)
+    {
+        if ($arr[$i] % 5 == 0) 
+            echo $arr[$i] . "</br>";
     }
-
-
 ?>
 </body>
 </html>
