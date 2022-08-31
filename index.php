@@ -8,12 +8,12 @@
 </head>
 <body>
 <?php
-    $arr = array(1,2,3,4,10,100,3,4987,6,7,8,9);
-    echo max($arr);
-    $max = $arr[0];
-    foreach($arr as $item)
-        if ($max < $item) $max = $item;
-    echo $max;
+    function censor($str){
+        $find = ['bitch', 'fuck', 'stupid'];
+        $replace = ['b**ch', 'f**k', 'stup**'];
+        return str_replace($find, $replace, $str);
+    }
+    echo censor('you stupid fuck bitch');
 ?>
 </body>
 </html>
