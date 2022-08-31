@@ -8,9 +8,20 @@
 </head>
 <body>
 <?php
-    $variable = "value";
-    $value = "123";
-    echo $$variable; // 123
+    class User{
+        static private $blood = 5;
+        static public function insertBlood($litr)
+        {
+            self::$blood += $litr;
+        }
+        static public function showBlood()
+        {
+            echo self::$blood;
+        }
+    }
+    User::showBlood();
+    User::insertBlood(3);
+    User::showBlood();
 ?>
 </body>
 </html>
